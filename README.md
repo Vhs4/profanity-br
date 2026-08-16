@@ -265,3 +265,5 @@ npm run analisar -- "sua frase" --json --limites=2,1
 ## Licença
 
 [MIT](LICENSE) © Victor Hugo Campos
+
+[LinkedIn](https://linkedin.com/in/vhs4)

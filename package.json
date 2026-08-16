@@ -20,7 +20,10 @@
   ],
   "sideEffects": false,
   "license": "MIT",
-  "author": "Vhs4",
+  "author": {
+    "name": "Victor Hugo Campos",
+    "url": "https://linkedin.com/in/vhs4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vhs4/profanity-br.git"
