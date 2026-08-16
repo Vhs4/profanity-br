@@ -1,0 +1,51 @@
+# GATE POR THRESHOLD: evasão é infinita — exigimos taxa mínima, não perfeição.
+# Cada entrada deve produzir um hit do termo esperado (qualquer confiança).
+threshold: 0.9
+casos:
+  # leet
+  - { texto: "que m3rd4",                termo: merda }
+  - { texto: "p0rra nenhuma",            termo: porra }
+  - { texto: "c@ralho",                  termo: caralho }
+  - { texto: "b0sta",                    termo: bosta }
+  - { texto: "idi0ta",                   termo: idiota }
+  - { texto: "f0da-se",                  termo: foder }
+  - { texto: "put@ que pariu",           termo: puta-que-pariu }
+  - { texto: "seu f1lho da put@",        termo: filho-da-puta }
+  - { texto: "0t4r10",                   termo: otario } # cascata de leet
+  - { texto: "p0000rra",                 termo: porra }
+  - { texto: "cara1ho",                  termo: caralho } # 1 no lugar de l
+  - { texto: "seu cuz@0",                termo: cuzao }
+  - { texto: "merda1",                   termo: merda } # dígito colado não quebra o match
+  - { texto: "que merda4",               termo: merda }
+  - { texto: "p1ru",                     termo: piru }
+  - { texto: "pir0ca",                   termo: piroca }
+  # repetição
+  - { texto: "meeeeerda",                termo: merda }
+  - { texto: "porrrrra",                 termo: porra }
+  - { texto: "merrrda",                  termo: merda }
+  - { texto: "carrralho",                termo: caralho }
+  - { texto: "bosssta",                  termo: bosta }
+  - { texto: "vai tomar no cuuuu",       termo: vai-tomar-no-cu }
+  # homóglifos e unicode
+  - { texto: "mеrdа",                    termo: merda } # е/а cirílicos
+  - { texto: "MERDΑ",                    termo: merda } # Α grego maiúsculo
+  - { texto: "PΟRRA",                    termo: porra } # Ο ômicron maiúsculo
+  - { texto: "pørra",                    termo: porra }
+  - { texto: "carałho",                  termo: caralho }
+  - { texto: "seu ıdıota",               termo: idiota } # ı sem ponto
+  - { texto: "🅱osta",                   termo: bosta }
+  - { texto: "ｃａｒａｌｈｏ",           termo: caralho } # fullwidth via NFKC
+  - { texto: "me​rda",                    termo: merda } # zero-width U+200B
+  - { texto: "me‎rda",                    termo: merda } # LRM U+200E
+  # abreviações e concatenação
+  - { texto: "FDP",                      termo: fdp }
+  - { texto: "vtnc mano",                termo: vai-tomar-no-cu }
+  - { texto: "krl",                      termo: krl }
+  - { texto: "vsf",                      termo: vai-se-foder }
+  - { texto: "vai se fude",              termo: vai-se-foder }
+  - { texto: "vaitomarnocu",             termo: vai-tomar-no-cu }
+  - { texto: "seu filhodaputa",          termo: filho-da-puta }
+  - { texto: "putaquepariu",             termo: puta-que-pariu }
+  - { texto: "toma no ku",               termo: vai-tomar-no-cu }
+  # miss conhecido: separador entre letras vira espaço
+  - { texto: "m.e.r.d.a",                termo: merda }

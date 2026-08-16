@@ -1,0 +1,12 @@
+# Termos válidos só em algumas regiões — o campo `regiao` filtra por locale na supressão.
+- id: puto
+  formas: [puto, putos]
+  vulgaridade: 2
+  regiao: [pt-BR] # em pt-PT, puto = miúdo/garoto (neutro)
+
+- id: rapariga
+  formas: [rapariga, raparigas]
+  vulgaridade: 1
+  alvo: { tipo: genero, severidade: 1 }
+  regiao: [pt-BR] # pejorativo regional no BR; neutro em pt-PT
+  requer_contexto: true

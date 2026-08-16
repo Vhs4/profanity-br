@@ -1,0 +1,134 @@
+# Vulgaridade sem alvo — eixo 1 apenas (registro linguístico, 0–3)
+- id: merda
+  formas: [merda, merdas, merdinha]
+  vulgaridade: 2
+
+- id: bosta
+  formas: [bosta, bostas]
+  vulgaridade: 2
+
+- id: porra
+  formas: [porra, porras, poha]
+  vulgaridade: 3
+
+- id: caralho
+  formas: [caralho, caralhos, caraio]
+  vulgaridade: 3
+
+- id: krl
+  formas: [krl]
+  vulgaridade: 3
+  requer_contexto: true # KRL = KUKA Robot Language
+
+- id: crl
+  formas: [crl]
+  vulgaridade: 3
+  requer_contexto: true # CRL = Certificate Revocation List (PKI), extensão .crl
+
+- id: cacete
+  formas: [cacete, caceta]
+  vulgaridade: 2
+  regiao: [pt-BR] # em pt-PT é pão (baguete)
+  requer_contexto: true # cacetinho/pão também no sul do BR
+
+- id: cu
+  formas: [cu, cuzinho]
+  vulgaridade: 3
+  requer_contexto: true # Cu = cobre (química), .cu = ccTLD de Cuba
+
+- id: buceta
+  formas: [buceta, bucetas]
+  vulgaridade: 3
+
+- id: bct
+  formas: [bct]
+  vulgaridade: 3
+  requer_contexto: true # BCT = estrutura cristalina / Bacharelado em C&T
+
+- id: foder
+  formas: [foder, fuder, fode, fodeu, fudeu, fodido, fodida, fudido, fudida, foda, foda-se, fodase]
+  vulgaridade: 3
+
+- id: vai-se-foder
+  formas: [vai se foder, vai se fuder, va se foder, vai se fude, se fude, vsf]
+  vulgaridade: 3
+
+- id: puta
+  formas: [puta, putas]
+  vulgaridade: 3
+
+- id: putaria
+  formas: [putaria, putarias]
+  vulgaridade: 2
+
+- id: puta-que-pariu
+  formas: [puta que pariu, puta que o pariu]
+  vulgaridade: 3
+
+- id: pqp
+  formas: [pqp]
+  vulgaridade: 3
+  requer_contexto: true # sigla colide com nomes de órgãos/empresas
+
+- id: vai-tomar-no-cu
+  formas: [vai tomar no cu, va tomar no cu, vai toma no cu, toma no cu, vai tomar no ku, toma no ku, vtnc]
+  vulgaridade: 3
+
+- id: tnc
+  formas: [tnc]
+  vulgaridade: 3
+  requer_contexto: true # TNC = conector coaxial / The Nature Conservancy
+
+- id: pica
+  formas: [pica]
+  vulgaridade: 3
+  requer_contexto: true # "pica" também é picada de vacina/injeção em uso coloquial
+
+- id: piru
+  formas: [piru, pirus, piruzinho]
+  vulgaridade: 2
+
+- id: piroca
+  formas: [piroca, pirocas, piroquinha]
+  vulgaridade: 2
+
+- id: pinto
+  formas: [pinto]
+  vulgaridade: 2
+  requer_contexto: true # filhote de galinha; sobrenome comum
+
+- id: xereca
+  formas: [xereca, xerecas]
+  vulgaridade: 3
+
+- id: xoxota
+  formas: [xoxota, xoxotas]
+  vulgaridade: 3
+
+- id: jeba
+  formas: [jeba, jebas]
+  vulgaridade: 2
+
+- id: punheta
+  formas: [punheta, punhetas]
+  vulgaridade: 3
+  requer_contexto: true # punheta de bacalhau é prato típico português
+
+- id: siririca
+  formas: [siririca, siriricas]
+  vulgaridade: 3
+
+- id: rola
+  formas: [rola]
+  vulgaridade: 3
+  requer_contexto: true # verbo rolar: "o vídeo rola bem"
+
+- id: pau
+  formas: [pau]
+  vulgaridade: 2
+  requer_contexto: true # madeira, "pau de selfie"
+
+- id: droga
+  formas: [droga]
+  vulgaridade: 1
+  requer_contexto: true # substantivo legítimo: "a droga foi apreendida"

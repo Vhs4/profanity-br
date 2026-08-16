@@ -1,0 +1,55 @@
+# GATE RÍGIDO: ZERO hits confirmados (confianca 'alta') em qualquer frase.
+# Falso positivo quebra o build — confiança não se recupera.
+# Hits 'ambigua' são tolerados aqui: sem resolver, eles não pontuam.
+- O deputado apresentou a proposta na câmara.
+- A deputada votou contra o texto-base.
+- A reputação da empresa ficou abalada após o episódio.
+- Fiz um curso de computação no ano passado.
+- Meu computador travou no meio da disputa.
+- Coloquei açúcar no café escuro.
+- O quarto estava completamente escuro.
+- A picada do mosquito ficou inchada.
+- O pica-pau fez um ninho na árvore do quintal.
+- O recurso foi negado pelo juiz na segunda instância.
+- No percurso até o trabalho peguei um trânsito enorme.
+- O concurso público abre inscrições amanhã.
+- Ela vai disputar a vaga no concurso.
+- Não se pode imputar o crime sem provas.
+- O médico precisou amputar o dedo do paciente.
+- Vi um macaco no zoológico com as crianças.
+- O vídeo rola bem até no celular antigo.
+- A conversa fluiu a noite toda sem problema.
+- Assisti a um documentário sobre veados na floresta.
+- A vacina é só uma picada rápida.
+- Vou cuidar disso amanhã de manhã.
+- A cultura da empresa mudou muito.
+- O curso d'água corta a fazenda inteira.
+- Ele é um ótimo profissional e muito curioso.
+- A obscura origem do quadro intriga os curadores.
+# — casos encontrados pelo QA adversarial —
+- O símbolo químico do cobre é Cu na tabela periódica.
+- A liga metálica é feita de Cu e Zn.
+- A porta do apartamento foi arrombada durante a madrugada.
+- Os ladrões deixaram o cofre arrombado no escritório.
+- O palhaço usava um sapatão vermelho gigante no número final.
+- Na aula de estatística, calculamos a fdp da distribuição normal.
+- O FDP alemão ficou fora da coalizão de governo.
+- O navegador consulta a CRL antes de validar o certificado digital.
+- A antena de rádio usa conector TNC de rosca.
+- O ultrassom revelou edema no escroto do paciente.
+- A ressonância mostrou lesão no corno posterior do menisco.
+- A crise no Corno de África agravou-se com a seca.
+- O touro ficou com o corno preso na cerca.
+- A análise FODA avalia forças, oportunidades, fraquezas e ameaças.
+- A professora pediu uma análise FODA da empresa para sexta.
+- O arquivo KRL foi exportado do robô industrial.
+- O relatório da PQP foi entregue no prazo.
+- Ele cursa o BCT na UFABC desde 2023.
+- A região foi desgraçada pela seca prolongada do sertão.
+- O poeta levava uma vida vagabunda pelas estradas do interior.
+- Me vê um cacete e um pingado, por favor.
+- Nota 4 no aplicativo, entrega rápida.
+- O produto custa R$ 50 na promoção.
+- O pinto amarelo seguia a galinha pelo quintal.
+- Fernanda Pinto assinou o contrato ontem.
+- A punheta de bacalhau é um petisco típico de Lisboa.

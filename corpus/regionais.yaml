@@ -1,0 +1,10 @@
+# pt-BR vs pt-PT: o mesmo texto muda de veredicto conforme o locale.
+# confirmados = ids esperados com confianca 'alta'; ambiguos = com 'ambigua'.
+- { texto: "Tive de esperar na bicha do multibanco", locale: pt-PT, confirmados: [], ambiguos: [] }
+- { texto: "cala a boca seu bicha",                  locale: pt-BR, confirmados: [bicha], ambiguos: [] }
+- { texto: "O puto passou a tarde a jogar à bola",   locale: pt-PT, confirmados: [], ambiguos: [] }
+- { texto: "fiquei muito puto com aquilo",           locale: pt-BR, confirmados: [puto], ambiguos: [] }
+- { texto: "A rapariga trabalha no café da esquina", locale: pt-PT, confirmados: [], ambiguos: [] }
+- { texto: "olha essa rapariga aí",                  locale: pt-BR, confirmados: [], ambiguos: [rapariga] }
+- { texto: "Comprei um cacete fresquinho na padaria", locale: pt-PT, confirmados: [], ambiguos: [] }
+- { texto: "que cacete, esqueci a carteira em casa",  locale: pt-BR, confirmados: [], ambiguos: [cacete] }

@@ -1,0 +1,63 @@
+{
+  "name": "profanity-br",
+  "version": "0.1.0",
+  "description": "Detector de profanidade PT-BR — núcleo determinístico, sem dependências de runtime, sem IA obrigatória. Dois eixos ortogonais: vulgaridade e alvo.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./resolvers/regra": {
+      "types": "./dist/resolvers/regra.d.ts",
+      "default": "./dist/resolvers/regra.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "Vhs4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vhs4/profanity-br.git"
+  },
+  "homepage": "https://github.com/Vhs4/profanity-br#readme",
+  "bugs": {
+    "url": "https://github.com/Vhs4/profanity-br/issues"
+  },
+  "keywords": [
+    "profanity",
+    "palavrao",
+    "moderacao",
+    "pt-br",
+    "portugues",
+    "filter",
+    "profanity-filter",
+    "aho-corasick"
+  ],
+  "scripts": {
+    "build:lexico": "tsx scripts/build-lexico.ts",
+    "pretest": "npm run build:lexico -s",
+    "test": "vitest run",
+    "repl": "npm run build:lexico -s && tsx cli/repl.ts",
+    "analisar": "npm run build:lexico -s && tsx cli/analisar.ts",
+    "build": "npm run build:lexico -s && rm -rf dist && tsc -p tsconfig.build.json && mkdir -p dist/gen && cp src/gen/lexico.json dist/gen/",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.117.1",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.10.0",
+    "js-yaml": "^4.1.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}

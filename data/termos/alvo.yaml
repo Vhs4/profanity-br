@@ -1,0 +1,125 @@
+# Termos com alvo — eixo 2 (tipo + severidade 1–3), independente da vulgaridade.
+# Nota: idiota/imbecil têm vulgaridade 0 e alvo != null — é a ortogonalidade do princípio estrutural.
+- id: cuzao
+  formas: [cuzao, cuzoes]
+  vulgaridade: 3
+  alvo: { tipo: insulto, severidade: 2 }
+
+- id: arrombado
+  formas: [arrombado, arrombada]
+  vulgaridade: 3
+  alvo: { tipo: insulto, severidade: 2 }
+  requer_contexto: true # particípio de arrombar: porta/cofre arrombada
+
+- id: filho-da-puta
+  formas: [filho da puta, filha da puta, filho duma puta, filho de uma puta]
+  vulgaridade: 3
+  alvo: { tipo: insulto, severidade: 2 }
+
+- id: fdp
+  formas: [fdp]
+  vulgaridade: 3
+  alvo: { tipo: insulto, severidade: 2 }
+  requer_contexto: true # fdp = função densidade de probabilidade; partido FDP
+
+- id: escroto
+  formas: [escroto, escrota]
+  vulgaridade: 2
+  alvo: { tipo: insulto, severidade: 2 }
+  requer_contexto: true # termo anatômico oficial (laudo urológico)
+
+- id: babaca
+  formas: [babaca, babacas]
+  vulgaridade: 1
+  alvo: { tipo: insulto, severidade: 1 }
+
+- id: otario
+  formas: [otario, otaria, otarios, otarias]
+  vulgaridade: 1
+  alvo: { tipo: insulto, severidade: 1 }
+
+- id: idiota
+  formas: [idiota, idiotas]
+  vulgaridade: 0
+  alvo: { tipo: insulto, severidade: 1 }
+
+- id: imbecil
+  formas: [imbecil, imbecis]
+  vulgaridade: 0
+  alvo: { tipo: insulto, severidade: 1 }
+
+- id: corno
+  formas: [corno, cornos, corna]
+  vulgaridade: 1
+  alvo: { tipo: insulto, severidade: 1 }
+  requer_contexto: true # chifre do animal, corno do menisco, Corno de África
+
+- id: desgracado
+  formas: [desgracado, desgracada]
+  vulgaridade: 2
+  alvo: { tipo: insulto, severidade: 1 }
+  requer_contexto: true # particípio de desgraçar: "região desgraçada pela seca"
+
+- id: vagabunda
+  formas: [vagabunda, vagabundas]
+  vulgaridade: 2
+  alvo: { tipo: genero, severidade: 2 }
+  requer_contexto: true # adjetivo legítimo: "vida vagabunda"
+
+- id: piranha
+  formas: [piranha, piranhas]
+  vulgaridade: 2
+  alvo: { tipo: genero, severidade: 2 }
+  requer_contexto: true # peixe
+
+- id: viado
+  formas: [viado, viadinho, viadao]
+  vulgaridade: 2
+  alvo: { tipo: orientacao, severidade: 3 }
+
+- id: veado
+  formas: [veado, veados]
+  vulgaridade: 2
+  alvo: { tipo: orientacao, severidade: 3 }
+  requer_contexto: true # animal
+
+- id: bicha
+  formas: [bicha]
+  vulgaridade: 2
+  alvo: { tipo: orientacao, severidade: 3 }
+  regiao: [pt-BR] # em pt-PT é fila
+
+- id: sapatao
+  formas: [sapatao]
+  vulgaridade: 2
+  alvo: { tipo: orientacao, severidade: 3 }
+  requer_contexto: true # aumentativo de sapato
+
+- id: traveco
+  formas: [traveco, travecos]
+  vulgaridade: 2
+  alvo: { tipo: genero, severidade: 3 }
+
+- id: macaco
+  formas: [macaco, macaca, macacos]
+  vulgaridade: 0
+  alvo: { tipo: raca, severidade: 3 }
+  requer_contexto: true # animal — só é slur dirigido a pessoa
+
+- id: crioulo
+  formas: [crioulo, crioula]
+  vulgaridade: 0
+  alvo: { tipo: raca, severidade: 3 }
+  regiao: [pt-BR]
+  requer_contexto: true # "crioulo haitiano" (língua) é legítimo
+
+- id: retardado
+  formas: [retardado, retardada, retardados]
+  vulgaridade: 1
+  alvo: { tipo: capacitismo, severidade: 2 }
+  requer_contexto: true # "efeito retardado" é uso técnico
+
+- id: mongoloide
+  formas: [mongoloide]
+  vulgaridade: 1
+  alvo: { tipo: capacitismo, severidade: 3 }

@@ -1,0 +1,40 @@
+# Palavras/expressões legítimas que contêm um termo do léxico.
+# A supressão é por CONTENÇÃO DE SPAN: se o span do hit está contido no span
+# de uma entrada daqui, o hit morre. A fronteira \p{L} já salva a maioria dos
+# casos de substring dentro de palavra — esta lista é defesa em profundidade
+# e cobre os casos multiword ("pica-pau") que a fronteira não salva.
+- deputado
+- deputada
+- deputados
+- deputadas
+- reputação
+- computador
+- computadores
+- computação
+- disputa
+- disputas
+- disputar
+- imputar
+- imputado
+- amputar
+- amputado
+- curso
+- cursos
+- percurso
+- percursos
+- recurso
+- recursos
+- concurso
+- concursos
+- escuro
+- escura
+- escuros
+- escuras
+- obscuro
+- açúcar
+- picada
+- picadas
+- pica-pau
+- pica-paus
+- análise foda # FODA = forças/oportunidades/fraquezas/ameaças (SWOT)
+- matriz foda

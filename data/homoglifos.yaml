@@ -1,0 +1,67 @@
+# Mapas usados pelo normalizador. NFKC já resolve fullwidth (ｃａｒａｌｈｏ) e
+# math-bold (𝐦𝐞𝐫𝐝𝐚); aqui ficam os lookalikes que NFKC NÃO converte.
+homoglifos:
+  # cirílico minúsculo
+  а: a
+  е: e
+  о: o
+  р: p
+  с: c
+  х: x
+  і: i
+  ѕ: s
+  ԁ: d
+  м: m
+  т: t
+  к: k
+  в: b
+  н: h
+  # cirílico maiúsculo (mapa roda antes da caixa)
+  А: a
+  Е: e
+  О: o
+  Р: p
+  С: c
+  Х: x
+  М: m
+  Т: t
+  К: k
+  В: b
+  Н: h
+  І: i
+  Ѕ: s
+  # grego (maiúsculos caem aqui via segunda passada, depois da caixa)
+  α: a
+  ο: o
+  ε: e
+  ι: i
+  κ: k
+  ν: v
+  τ: t
+  ρ: p
+  υ: u
+  # latinos estendidos sem decomposição NFKC
+  ø: o
+  ł: l
+  đ: d
+  ı: i
+  ß: ss
+  # símbolos usados como letra
+  "🅰": a
+  "🅱": b
+  "🅾": o
+
+# De-leet: só se aplica junto a letra (modo `uma` = pelo menos um vizinho é
+# letra; modo `ambas` = os dois vizinhos são letras — para pontuação legítima
+# como "!", que não pode virar "i" em "merda!").
+leet:
+  "0": { para: o, modo: uma }
+  "1": { para: i, modo: uma }
+  "3": { para: e, modo: uma }
+  "4": { para: a, modo: uma }
+  "5": { para: s, modo: uma }
+  "7": { para: t, modo: uma }
+  "@": { para: a, modo: uma }
+  "$": { para: s, modo: uma }
+  "€": { para: e, modo: uma }
+  "!": { para: i, modo: ambas }
