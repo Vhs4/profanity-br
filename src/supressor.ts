@@ -68,18 +68,75 @@ export function suprimirMatchesInvalidos(
     }
   }
 
-  const foraDaAllowlist = candidatos.filter(
-    c => !allowSpans.some(a => a.ini <= c.ini && c.fim <= a.fim),
-  )
+  let foraDaAllowlist = candidatos
+  if (allowSpans.length > 0) {
+    const indice = indexarSpansPorInicio(allowSpans)
+    foraDaAllowlist = candidatos.filter(c => !contidoEmAlgumSpan(c, indice))
+  }
 
   const ordenado = [...foraDaAllowlist].sort(
     (a, b) => (b.fim - b.ini) - (a.fim - a.ini) || a.ini - b.ini,
   )
+  const ocupado = new Uint8Array(norm.texto.length)
+  const spansMantidos = new Set<string>()
   const mantidos: MatchDeTermo[] = []
   for (const c of ordenado) {
-    const identico = mantidos.some(m => m.ini === c.ini && m.fim === c.fim)
-    const sobrepoe = mantidos.some(m => c.ini < m.fim && m.ini < c.fim)
-    if (identico || !sobrepoe) mantidos.push(c)
+    const chave = `${c.ini}:${c.fim}`
+    if (spansMantidos.has(chave)) {
+      mantidos.push(c)
+      continue
+    }
+    let livre = true
+    for (let p = c.ini; p < c.fim; p++) {
+      if (ocupado[p]) {
+        livre = false
+        break
+      }
+    }
+    if (!livre) continue
+    ocupado.fill(1, c.ini, c.fim)
+    spansMantidos.add(chave)
+    mantidos.push(c)
   }
   return mantidos.sort((a, b) => a.ini - b.ini || b.fim - a.fim)
+}
+
+interface IndiceDeSpans {
+  inicios: number[]
+  maxFimAte: number[]
+}
+
+/** Ordena os spans por início e acumula o máximo de fim visto até cada um. */
+function indexarSpansPorInicio(spans: Span[]): IndiceDeSpans {
+  const ordenados = [...spans].sort((a, b) => a.ini - b.ini)
+  const inicios: number[] = []
+  const maxFimAte: number[] = []
+  let max = -1
+  for (const s of ordenados) {
+    if (s.fim > max) max = s.fim
+    inicios.push(s.ini)
+    maxFimAte.push(max)
+  }
+  return { inicios, maxFimAte }
+}
+
+/**
+ * Testa contenção em O(log n): existe contêiner sse o maior fim entre os
+ * spans que começam até o início do candidato alcança o fim dele. A busca
+ * linear original era alvo de DoS com milhares de hits numa mensagem só.
+ */
+function contidoEmAlgumSpan(c: Span, indice: IndiceDeSpans): boolean {
+  let lo = 0
+  let hi = indice.inicios.length - 1
+  let idx = -1
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1
+    if (indice.inicios[mid] <= c.ini) {
+      idx = mid
+      lo = mid + 1
+    } else {
+      hi = mid - 1
+    }
+  }
+  return idx >= 0 && indice.maxFimAte[idx] >= c.fim
 }

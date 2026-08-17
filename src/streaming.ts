@@ -12,6 +12,10 @@ export class AnalisadorStream {
   private buffer = ''
   private base = 0
   private emitidos: Hit[] = []
+  /** só os emitidos que ainda alcançam o buffer atual — é contra estes que
+   *  a checagem de contenção roda; sem a poda ela seria quadrática no
+   *  total de hits do stream (DoS em streams longos) */
+  private recentes: Hit[] = []
   private vistos = new Set<string>()
   private readonly reserva: number
 
@@ -43,6 +47,7 @@ export class AnalisadorStream {
     if (corte > 0) {
       this.base += corte
       this.buffer = this.buffer.slice(corte)
+      this.recentes = this.recentes.filter(h => h.span[1] > this.base)
     }
     return novos
   }
@@ -77,7 +82,7 @@ export class AnalisadorStream {
       }
       const chave = `${global.id}:${global.span[0]}:${global.span[1]}`
       if (this.vistos.has(chave)) continue
-      const contido = this.emitidos.some(
+      const contido = this.recentes.some(
         e =>
           e.span[0] <= global.span[0] &&
           global.span[1] <= e.span[1] &&
@@ -86,6 +91,7 @@ export class AnalisadorStream {
       if (contido) continue
       this.vistos.add(chave)
       this.emitidos.push(global)
+      this.recentes.push(global)
       novos.push(global)
     }
     return novos
