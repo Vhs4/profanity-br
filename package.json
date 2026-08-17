@@ -1,6 +1,6 @@
 {
   "name": "profanity-br",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Detector de profanidade PT-BR — núcleo determinístico, sem dependências de runtime, sem IA obrigatória. Dois eixos ortogonais: vulgaridade e alvo.",
   "type": "module",
   "main": "dist/index.js",
